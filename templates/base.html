@@ -1,0 +1,86 @@
+{% load static %}
+{% include 'snipets/header_static_files.html' %}
+
+<body class="top-navbar-fixed">
+<div class="main-wrapper">
+    
+    {% block main_wrapper %}
+        <div class="content-wrapper">
+            <div class="content-container">
+        
+                <div class="left-sidebar bg-black-300 box-shadow ">
+                    <div class="sidebar-content">
+                        <div class="user-info closed">
+                            
+                        </div>
+                        {% include 'snipets/sidebar_nav.html' %}
+                    </div>
+                </div>
+        
+                <div class="main-page">
+        
+                    {% block main_page %}
+                    <div class="container-fluid">
+                        <div class="row page-title-div">
+                            <div class="col-sm-6">
+                                <h2 class="title">
+        
+                                    {% block main_page_title %}
+        
+                                    {% endblock main_page_title %}
+        
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="row breadcrumb-div">
+                            <div class="col-md-6">
+                                <ul class="breadcrumb">
+                                    <li><a href="{% url 'dashboard:dashboard' %}"><i class="fa fa-home"></i> Home</a></li>
+                                    {% block breadcumb %}
+        
+                                    {% endblock breadcumb %}
+        
+                                </ul>
+                            </div>
+        
+                        </div>
+        
+                    </div>
+        
+                    <section class="section">
+                        <div class="container-fluid">
+        
+                            {% block main_page_content %}
+                            <div class="row">
+        
+                                {% block panel %}
+        
+                                {% endblock panel %}
+        
+                            </div>
+        
+                            {% endblock main_page_content %}
+        
+                        </div>
+                    </section>
+                    {% endblock main_page %}
+        
+                </div>
+        
+        
+            </div>
+        </div>
+        {% include 'snipets/nav.html' %}
+    {% endblock main_wrapper %}
+        
+</div>
+        
+ {% include 'snipets/footer_static_files.html' %}
+
+{% block javascript_code %}
+
+{% endblock javascript_code %}
+
+</body>
+
+</html>
